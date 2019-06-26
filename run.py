@@ -12,7 +12,7 @@ def open_key():
     file = open('key.key', 'rb')
     key = file.read()
     file.close()
-    print(key)
+    #print(key)
     return(key)
 
 
@@ -38,20 +38,20 @@ def decrypto(arquivo, key):
     with open(arquivo, 'wb') as f:
         f.write(encrypted)
 
+@eel.expose
+def print_path(data):
+    print(data)
 
 
 
-
-arquivo = 'extrato.jpg.crypto'
+'''arquivo = 'D:\Imagens\surfacefamily.jpg'
 key = open_key()
-#crypto(arquivo, key)
-decrypto(arquivo, key)
+crypto(arquivo)
+#decrypto(arquivo, key)'''
 
 
-
-
-'''eel.init('web')
+eel.init('web')
 eel.start('index.html', block=False)
 
 while True:
-    eel.sleep(10)'''
+    eel.sleep(10)

@@ -10,6 +10,12 @@
     <link href="style.css" rel="stylesheet">
     <script type="text/javascript" src="/eel.js"></script>
     <script type="text/javascript" src="main.js"></script>
+    <script>
+        cryptojs = function() {
+	    var data = document.getElementById("data").files[0].name
+	    eel.crypto(data)
+        }
+    </script>
     
 </head>
 
@@ -26,7 +32,7 @@
                     <div class="get-start-area">
                         <form class="form-inline">
                             <input type="file" id="data" class="submit">
-                            <input type="button" class="submit" value="Crypto!" onclick="generateQRCode()">
+                            <input type="button" class="submit" value="Crypto!" onclick="cryptojs()">
                         </form>
                     </div>
                 </div>
