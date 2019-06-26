@@ -48,12 +48,20 @@ p {
 
 .wellcome_area {
     background-image: url(img/bg-img/welcome-bg.png);
-    height: 500px;
+    height: 700px;
     position: relative;
     z-index: 1;
     background-position: bottom center;
     background-size: cover;
 }
+.popup {
+    background-color: #466FD5;
+    position: relative;
+    z-index: 1;
+}
+
+
+
 
 .welcome-thumb {
     width: 42%;

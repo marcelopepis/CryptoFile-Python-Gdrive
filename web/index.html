@@ -11,12 +11,27 @@
     <script type="text/javascript" src="/eel.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <script>
+        newPopup = function(){
+            newpopupWindow = window.open ('', 'pagina', "width=250 height=250");
+            
+            newpopupWindow.document.write ("<p>Arquivo criptografado e enviado para o Gdrive!</p>");
+        }
+        newPopupDecrypt = function(){
+            newpopupWindow = window.open ('', 'pagina', "width=250 height=250");
+            
+            newpopupWindow.document.write ("<p>Arquivo decriptografado com sucesso!</p>");
+        }
         cryptojs = function() {
 	    var data = document.getElementById("data").files[0].name
 	    eel.crypto(data)
+        newPopup()
+        }
+        decryptjs = function(){
+            var data = document.getElementById("data_decrypto").files[0].name
+	        eel.decrypt(data)
+            newPopupDecrypt()
         }
     </script>
-    
 </head>
 
 <body>
@@ -35,11 +50,16 @@
                             <input type="button" class="submit" value="Crypto!" onclick="cryptojs()">
                         </form>
                     </div>
+                    <br>
+                    <br>
+                    <div class="get-start-area">
+                            <form class="form-inline">
+                                <input type="file" id="data_decrypto" class="submit">
+                                <input type="button" class="submit" value="Decrypt!" onclick="decryptjs()">
+                            </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="welcome-thumb">
-            <img id="qr" src="" width="60%">
         </div>
     </section>
 </body>

@@ -1,5 +1,6 @@
 import eel
 from cryptography.fernet import Fernet
+from gdrive import upGdrive
 
 def key_generator():
     key = Fernet.generate_key()
@@ -27,8 +28,15 @@ def crypto(arquivo):
 
     with open(arquivo + '.crypto', 'wb') as file_enc:
         file_enc.write(encrypted)
+        file_to_upload = arquivo + '.crypto'
+    
+    #teste de upload
+    drive = upGdrive.autenticator()
+    upGdrive.upload(file_to_upload, drive)
 
-def decrypto(arquivo, key):
+@eel.expose
+def decrypt(arquivo):
+    key = open_key()
     with open (arquivo, 'rb') as file:
         data = file.read()
     fernet = Fernet(key)
@@ -41,13 +49,6 @@ def decrypto(arquivo, key):
 @eel.expose
 def print_path(data):
     print(data)
-
-
-
-'''arquivo = 'D:\Imagens\surfacefamily.jpg'
-key = open_key()
-crypto(arquivo)
-#decrypto(arquivo, key)'''
 
 
 eel.init('web')
