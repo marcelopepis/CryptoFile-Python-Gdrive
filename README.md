@@ -15,3 +15,4 @@ Pydrive,
 eel,
 Cryptography
 Front-end feito em CSS, HTML e Javascript, back-end feito em python.
+Criptográfia feita com AES 128bits, usando a biblioteca cryptography do Python.
